@@ -1,15 +1,14 @@
 ---
 interface Props {
     id: string
-    name: string
     image: string
     success: boolean
     flightNumber: number
-    details: string
+    details: string | null
 }
 
 const { success, flightNumber, image, id, details } = Astro.props
-const successText = success ? 'Success' : 'Failure'
+const launchStatus = success ? 'Success' : 'Failure'
 ---
 
 <a
@@ -21,21 +20,25 @@ const successText = success ? 'Success' : 'Failure'
             src={image}
             alt={`Patch for launch ${id}`}
         >
-        <header class="p-4 flex-grow">
-            <span class=`text-xs font-semibold mr-2 px2.5 py-0.5 rounded ${
-                success ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900'
-            }`>
-                {successText}
-            </span>
-
-            <h2 class="my-8">
-                Flight #{flightNumber}
-            </h2>
-
-            <p class="mb-4 font-light text-gray-400">
-                {details?.length > 100 ? `${details.substring(0, 100)}...` : details
-            </p>
-        </header>
     </picture>
+    <header class="p-4 flex-grow">
+        <span class=`text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ${
+            success ? 'bg-green-200 text-green-900' : 'bg-red-200 text-red-900'
+        }`>
+        {launchStatus}
+        </span>
+
+        <h2 class="my-8">
+            Flight #{flightNumber}
+        </h2>
+
+        <p class="mb-4 font-light text-gray-400">
+            {
+                details !== null && details?.length > 100
+                    ? `${details.substring(0, 100)}...`
+                    : details
+            }
+        </p>
+    </header>
 </a>
 
