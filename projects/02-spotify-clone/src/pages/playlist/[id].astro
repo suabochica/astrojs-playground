@@ -5,7 +5,8 @@ import { allPlaylists, songs } from "@/lib/data";
 
 // 👇 Check why this id is undefined?
 
-const { id } = Astro.props;
+const { id } = Astro.params;
+
 const playlist = allPlaylists.find((playlist) => playlist.id === id);
 
 const playlistSongs = songs.filter(
