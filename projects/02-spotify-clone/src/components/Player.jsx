@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 // 👇 These import not work b/c are defined for astro.
 // import { Pause } from '../icons/Pause.astro'
@@ -14,11 +14,23 @@ export const Play = ({ className }) => (
 
 export function Player() {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [currentSong, setCurrentSong] = useState(null)
+  const audioRef = useRef()
+
+  useEffect(() => {
+    audioRef.current.src = '/music/1/01.mp3'
+  }, [])
 
   // Handlers
   // --------
 
   const handleClick = () => {
+    if (isPlaying) {
+      audioRef.current.pause()
+    } else {
+      audioRef.current.play()
+      audioRef.current.volume = 0.1
+    }
     setIsPlaying(!isPlaying)
   }
 
@@ -35,7 +47,9 @@ export function Player() {
           </button>
         </div>
       </div>
-      <div>Volumen</div>
+      <div className='grid place-content'>Volumen</div>
+      <audio ref={audioRef}></audio>
+
     </div>
   )
 }
