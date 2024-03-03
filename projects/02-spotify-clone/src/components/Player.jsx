@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react'
 // import { Pause } from '../icons/Pause.astro'
 // import { Play } from '../icons/Play.astro'
 import { usePlayerStore } from '@/store/playerStore'
-import { toAttributeString } from 'astro/runtime/server/render/util.js'
+import { Slider } from './Slider'
 
 
 export const Pause = ({ className }) => (
@@ -38,8 +38,9 @@ const CurrentSong = ({ image, title, artists }) => {
 }
 
 export function Player() {
-  const { currentMusic, isPlaying, setIsPlaying } = usePlayerStore(state => state)
+  const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(state => state)
   const audioRef = useRef()
+  const volumeRef = useRef(1)
 
   // Effects
   // --------
@@ -55,7 +56,9 @@ export function Player() {
 
     if (song) {
       const src = `/music/${playlist.id}/0${song.id}.mp3`
+
       audioRef.current.src = src
+      audioRef.current.volume = volumeRef.current
       audioRef.current.play()
     }
   }, [currentMusic])
@@ -85,11 +88,24 @@ export function Player() {
             onClick={handleClick}
           >
             {isPlaying ? <Pause /> : <Play />}
+            <audio ref={audioRef}></audio>
           </button>
         </div>
       </div>
-      <div className='grid place-content'>Volumen</div>
-      <audio ref={audioRef}></audio>
+      <div className='grid place-content-center'>
+        <Slider
+          defaultValue={[100]}
+          max={100}
+          min={0}
+          className='w-[95px]'
+          onValueChange={(value) => {
+            const [newVolume] = value
+            const volumeValue = newVolume / 100
+
+            audioRef.current.volume = volumeValue
+          }}
+        />
+      </div>
 
     </div>
   )
