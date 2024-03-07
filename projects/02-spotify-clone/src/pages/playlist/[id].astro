@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import MusicsTable from "../../components/MusicsTable.astro";
+import { CardPlayButton } from "@/components/CardPlayButton.jsx";
+import MusicsTable from "@/components/MusicsTable.astro";
 
 import { allPlaylists, songs } from "@/lib/data";
 
@@ -52,6 +53,11 @@ const playlistSongs = songs.filter(
         </div>
       </div>
     </header>
+
+    <div class="pl-6 pt-6">
+      <CardPlayButton id={id} size="large" client:load />
+    </div>
+
     <div class="retalive z-10 px-6 pt-10"></div>
 
     <div
@@ -59,6 +65,8 @@ const playlistSongs = songs.filter(
     >
     </div>
 
-    <MusicsTable songs={playlistSongs} />
+    <section class="p-6">
+      <MusicsTable songs={playlistSongs} />
+    </section>
   </div>
 </Layout>
