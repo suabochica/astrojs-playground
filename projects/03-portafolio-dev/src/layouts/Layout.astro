@@ -1,4 +1,8 @@
 ---
+import "@fontsource-variable/onest";
+
+import Header from "../components/Header.astro";
+
 interface Props {
 	title: string;
 }
@@ -16,19 +20,30 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+
 	<body>
+		<div
+			class="absolute top-0 z-[-2] h-screen w-screen bg-[#033431] bg-[radial-gradient(#ffffff33_1px,#264653_1px)] bg-[size:28px_28px]"
+		>
+		</div>
+		<Header />
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
+		color-scheme: light dark;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Onest Variable", system-ui, sans-serif;
 	}
+
 	body {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
-		background-color: #2f2f2f;
+		min-height: 100vh;
 	}
 </style>
