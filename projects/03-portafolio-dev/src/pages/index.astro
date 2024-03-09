@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 ---
 
 <Layout title="Welcome to Portafolio Web.">
@@ -20,6 +22,15 @@ import Badge from "../components/Badge.astro";
 				<span class="text-orange-200/90">+8 años de expriencia.</span> Desarrollador
 				web. De Bogotá, Colombia 🇨🇴.
 			</h2>
+
+			<ul>
+				<li>
+					<SocialPill>
+						<LinkedInIcon class="w-6 h-6" />
+						LinkedIn
+					</SocialPill>
+				</li>
+			</ul>
 		</section>
 	</main>
 </Layout>
