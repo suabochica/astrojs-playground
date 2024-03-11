@@ -1,10 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import SocialPill from "../components/SocialPill.astro";
+
+import BriefCaseIcon from "../components/icons/BriefCaseIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import MailIcon from "../components/icons/MailIcon.astro";
+
+import SectionContainer from "../components/SectionContainer.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout
@@ -12,7 +17,7 @@ import MailIcon from "../components/icons/MailIcon.astro";
 	description="Contrata a suabochica para crear aplicaciones web maravillosas"
 >
 	<main>
-		<section class="w-[740px] mx-auto py-40">
+		<SectionContainer class="py-40 pb-20">
 			<h1 class="text-white text-6xl font-bold flex flex-row gap-x-2 pb-8">
 				Hey, soy suabochica <a
 					href="https://www.linkedin.com/in/slbenitezd"
@@ -44,7 +49,15 @@ import MailIcon from "../components/icons/MailIcon.astro";
 					sl.benitezd@gmail.com
 				</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer>
+			<h2 class="text-2xl font-semibold mb-8 flex gap-x-3 items-center">
+				<BriefCaseIcon class="size-8" />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
 
