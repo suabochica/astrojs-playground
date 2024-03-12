@@ -16,9 +16,11 @@ import Experience from "../components/Experience.astro";
 	title="Portafolio de suabochica."
 	description="Contrata a suabochica para crear aplicaciones web maravillosas"
 >
-	<main>
+	<main class="px-4">
 		<SectionContainer class="py-40 pb-20">
-			<h1 class="text-white text-6xl font-bold flex flex-row gap-x-2 pb-8">
+			<h1
+				class="text-white text-3xl md: text-4xl lg:text-5xl font-bold flex flex-row gap-x-2 pb-8"
+			>
 				Hey, soy suabochica <a
 					href="https://www.linkedin.com/in/slbenitezd"
 					target="_blank"
@@ -28,7 +30,7 @@ import Experience from "../components/Experience.astro";
 					<Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-2xl text-wrap">
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[680px]">
 				<span class="text-orange-200/90">+8 años de expriencia.</span> Desarrollador
 				web. De Bogotá, Colombia 🇨🇴.
 			</h2>
@@ -44,14 +46,14 @@ import Experience from "../components/Experience.astro";
 					GitHub
 				</SocialPill>
 
-				<SocialPill href="https://github/suabochica">
+				<SocialPill href="mailto:slbenitezd@gmail.com">
 					<MailIcon class="size-6" />
 					sl.benitezd@gmail.com
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer>
+		<SectionContainer id="experience">
 			<h2 class="text-2xl font-semibold mb-8 flex gap-x-3 items-center">
 				<BriefCaseIcon class="size-8" />
 				Experiencia laboral
