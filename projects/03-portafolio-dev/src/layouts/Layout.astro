@@ -23,9 +23,9 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body>
+	<body class="relative">
 		<div
-			class="absolute top-0 z-[-2] h-screen w-screen bg-[#033431] bg-[radial-gradient(#ffffff33_1px,#264653_1px)] bg-[size:28px_28px]"
+			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#033431] bg-[radial-gradient(#ffffff33_1px,#264653_1px)] bg-[size:28px_28px]"
 		>
 		</div>
 
@@ -33,7 +33,7 @@ const { title, description } = Astro.props;
 
 		<slot />
 
-		<Footer/>
+		<Footer />
 	</body>
 </html>
 

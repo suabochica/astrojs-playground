@@ -1,7 +1,11 @@
 ---
-const { id, class: className } = Astro.props;
+const { class: className, id } = Astro.props;
 ---
 
-<section id={id} class=`w-[740px] mx-auto ${className}`>
+<section
+  id={id}
+  data-section={id}
+  class={`section ${className} scroll-m-20 w-full mx-auto container pt-16 lg:max-w-4xl md:max-w-2xl`}
+>
   <slot />
 </section>
