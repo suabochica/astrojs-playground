@@ -1,3 +1,59 @@
-<footer class="py-20">
-  <p>Footer</p>
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class=`
+  flex
+  justify-center
+  opacity-80
+  m-4 mb-10 mt-16 mx-auto
+  w-full
+  md:max-w-2xl
+  lg:max-w-4xl
+`
+>
+  <div
+    class=`
+    rouded-lg
+    mx-auto
+    py-4
+    w-full max-w-screen-xl
+    md:flex
+    md:items-center
+    md:justify-between
+  `
+  >
+    <span
+      class=`
+      text-sm text-white-800/90
+      sm:text-center 
+      dark:text-zinc-200/90
+    `
+    >
+      © {currentYear}
+      <a href="https://suabochica.com/" class="hover:underline">suabochica</a>.
+      Casi todos los derechos reservados
+    </span>
+    <ul
+      class=`
+        flex flex-wrap items-center
+        mt-3
+        text-sm font-medium
+        dark:text-white/90
+        sm:mt-0
+      `
+    >
+      <li>
+        <a href="/#sobre-mi" class="me-4 md:me-6 hover:underline">Sobre mí</a>
+      </li>
+      <li>
+        <a
+          id="contacto"
+          href="mailto:sergio.kun21@gmail.com"
+          class="hover:underline">Contacto</a
+        >
+      </li>
+    </ul>
+  </div>
 </footer>
