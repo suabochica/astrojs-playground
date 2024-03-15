@@ -33,6 +33,9 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
         {city}, {region}
       </span>
       <footer>
+        <div class="print">
+          {printInfo}
+        </div>
         {
           email && (
             <a
