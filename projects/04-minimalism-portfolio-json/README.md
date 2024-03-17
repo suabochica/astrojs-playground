@@ -8,6 +8,7 @@
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ![JSON Resume](https://jsonresume.org)
+![Ninja Keys](https://github.com/ssleptsov/ninja-keys)
 
 🚀 Project Structure
 --------------------
