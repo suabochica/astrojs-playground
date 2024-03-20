@@ -24,20 +24,16 @@ const THEMES = ["Light", "Dark", "System"];
   </button>
   <div
     id="themes-menu"
-    class=`
-      absolute hidden
-      scale-80
-      top-8 right-0
-      text-sm
-      p-1 min-w-[8rem]
-      rounded-md border border-gray-100
-      bg-white/90
-      dark:bg-gray-900/90 dark:border-gray-500/20
-      shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md
-    `
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
     <ul>
-      {THEMES.map((theme) => <li class="hover:bg-gray-100">{theme}</li>)}
+      {
+        THEMES.map((theme) => (
+          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+            {theme}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>
@@ -78,7 +74,7 @@ const THEMES = ["Light", "Dark", "System"];
 
   const updateIcon = (themePreference) => {
     document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-      element.style.scale = element.id === themePreference ? 1 : 0;
+      element.style.scale = element.id === themePreference ? "1" : "0";
     });
   };
 
@@ -86,9 +82,7 @@ const THEMES = ["Light", "Dark", "System"];
     if (remove != null) {
       remove();
     }
-
     matchMedia.addEventListener("change", updateTheme);
-
     remove = () => {
       matchMedia.removeEventListener("change", updateTheme);
     };
@@ -105,16 +99,16 @@ const THEMES = ["Light", "Dark", "System"];
   updateTheme();
 
   document.addEventListener("click", () => themesMenu.classList.remove("open"));
-  document
-    .getElementById("theme-toggle-btn")
-    .addEventListener("click", (event) => {
-      event.stopPropagation();
-      const isClosed = !themesMenu.classList.contains("open");
-      themesMenu.classList[isClosed ? "add" : "remove"]("open");
-    });
+
+  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isClosed = !themesMenu.classList.contains("open");
+    themesMenu.classList[isClosed ? "add" : "remove"]("open");
+  });
+
   document.querySelectorAll(".themes-menu-option").forEach((element) => {
-    element.addEventListener("click", (event) => {
-      localStorage.setItem("theme", event.innerText.toLowerCase().trim());
+    element.addEventListener("click", (e) => {
+      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim());
       updateTheme();
     });
   });
