@@ -1,1 +1,14 @@
-<h1>Bento</h1>
+---
+import BentoItem from './BentoItem.astro'
+---
+
+<section class={`
+  w-full max-w[1400px]
+  grid grid-cols-10 auto-rows-[25rem] gap-4
+  mx-auto p-20
+`}>
+  <BentoItem class="col-span-10 md:col-span-4" title="ANDORRA: EL CÉNIT DE LOS PREMIOS ESLAND"/>
+  <BentoItem class="col-span-10 md:col-span-6" title="LA ALFOMBRA BLANCA" subtitle="16 de febrero de 2024"/>
+  <BentoItem class="col-span-10 md:col-span-6" title="LA GALA"/ subtitle="17 de febrero de 2024" />
+  <BentoItem class="col-span-10 md:col-span-4" title="DISFRUTA DE LA COMUNIDAD DE REDDIT"/>
+</section>
