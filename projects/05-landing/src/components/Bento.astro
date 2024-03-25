@@ -15,7 +15,7 @@ import BentoItem from './BentoItem.astro'
       group-hover:scale-110
       transition-scale duration-1000 ease-in-out
       opacity-90
-      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity bg-blue-900
       -z-10"
       style="background-image: url('/mountain.png')"
     ></div>
@@ -29,7 +29,7 @@ import BentoItem from './BentoItem.astro'
       group-hover:scale-110
       transition-scale duration-1000 ease-in-out
       opacity-90
-      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity bg-blue-900
       -z-10"
       style="background-image: url('/pistas.png')"
     ></div>
@@ -42,7 +42,21 @@ import BentoItem from './BentoItem.astro'
     <p>No te lo pierdas.</p>
     </div>
   </BentoItem>
-  <BentoItem class="col-span-10 md:col-span-6" title="LA GALA"/ subtitle="17 de febrero de 2024" />
+  <BentoItem class="col-span-10 md:col-span-6" title="LA GALA"/ subtitle="17 de febrero de 2024">
+    <div
+      slot="image"
+      class="
+      absolute left-0 top-0 bottom-0 w-full h-full
+      group-hover:scale-110
+      transition-scale duration-1000 ease-in-out
+      opacity-90
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity bg-blue-900
+      -z-10"
+      style="background-image: url('/grefg.png')"
+    ></div>
+    <p slot="content">Una gala de premios llena <strong>contenido de primer nivel</strong> y muchas sorpresas en al que se descubrirán los ganadores de esta tercera edición de los Premios ESLAND.
+    </p>
+  </BentoItem>
   <BentoItem class="col-span-10 md:col-span-4" title="DISFRUTA DE LA COMUNIDAD">
     <div
       slot="image"
@@ -51,7 +65,7 @@ import BentoItem from './BentoItem.astro'
       group-hover:scale-110
       transition-scale duration-1000 ease-in-out
       opacity-90
-      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity bg-blue-900
       -z-10"
       style="background-image: url('/laptop.png')"
     ></div>
