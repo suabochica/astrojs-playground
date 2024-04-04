@@ -3,6 +3,7 @@ import SpainFlag from '@/components/flags/SpainFlag.astro'
 import UnitedStatesFlag from '@/components/flags/UnitedStatesFlag.astro'
 
 export const defaultLanguage = 'es';
+export const showDefaultLanguage = false;
 
 export const LANGUAGES: Record<string, { code: string; name: string; flag: typeof SpainFlag }> = {
   ca: {
@@ -51,3 +52,30 @@ export const NAV_ITEMS = {
     'nav.cookies': 'Cookies',
   },
 } as const
+
+export const ROUTES = {
+  es: {
+    vota: 'vota',
+    info: 'info',
+    archivo: 'archivo',
+    'aviso-legal': 'aviso-legal',
+    privacidad: 'privacidad',
+    cookies: 'cookies',
+  },
+  en: {
+    vota: 'vote',
+    info: 'information',
+    archivo: 'archive',
+    'aviso-legal': 'legal-notice',
+    privacidad: 'privacy',
+    cookies: 'cookies',
+  },
+  ca: {
+    vota: 'vota',
+    info: 'informacio',
+    archivo: 'arxiu',
+    'aviso-legal': 'avis-legal',
+    privacidad: 'privacitat',
+    cookies: 'cookies',
+  },
+}
