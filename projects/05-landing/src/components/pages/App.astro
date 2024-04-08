@@ -12,7 +12,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+<Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION}>
   <Video />
   <main>
     <Intro />
@@ -22,4 +22,3 @@ const i18n = getI18N({ currentLocale });
   <Footer />
 </Layout>
 
-<style></style>
