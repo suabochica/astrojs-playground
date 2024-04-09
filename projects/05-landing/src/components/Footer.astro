@@ -1,5 +1,19 @@
 ---
 import Logo from "./Logo.astro";
+import {
+  getLangFromUrl,
+  useTranslatePath,
+  useTranslations,
+} from "@/i18n/utils";
+
+import { getI18N } from "@/i18n/index";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const language = getLangFromUrl(Astro.url);
+const translate = useTranslations(language);
+const translatePath = useTranslatePath(language);
 ---
 
 <footer class="bg-black/40">
@@ -74,48 +88,50 @@ import Logo from "./Logo.astro";
       <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
         <div>
           <h2 class="mb-6 text-sm font-semibold text-white-900 uppercase">
-            Legal
+            {i18n.FOOTER.LEGAL.TITLE}
           </h2>
 
           <ul class="text-gray-500 font-medium">
             <li class="mt-2">
               <a href="https://flowbite.com/" class="hover:underline"
-                >Aviso Legar</a
+                >{translate("nav.legal")}</a
               >
             </li>
             <li>
               <a href="https://tailwindcss.com/" class="hover:underline"
-                >Privacidad</a
+                >{translate("nav.privacidad")}</a
               >
             </li>
             <li>
               <a href="https://tailwindcss.com/" class="hover:underline"
-                >Cookies</a
+                >{translate("nav.cookies")}</a
               >
             </li>
           </ul>
         </div>
         <div>
           <h2 class="mb-6 text-sm font-semibold text-white-900 uppercase">
-            Web Map
+            {i18n.FOOTER.WEB_MAP.TITLE}
           </h2>
           <ul class="text-gray-500 font-medium">
             <li class="mt-2">
-              <a href="/" class="hover:underline">Home</a>
+              <a href="/" class="hover:underline">{translate("nav.inicio")}</a>
             </li>
             <li>
               <a href="https://discord.gg/4eeurUVvTy" class="hover:underline"
-                >Info</a
+                >{translate("nav.info")}</a
               >
             </li>
             <li>
-              <a href="/archivo" class="hover:underline">Archivo</a>
+              <a href="/archivo" class="hover:underline"
+                >{translate("nav.archivo")}</a
+              >
             </li>
           </ul>
         </div>
         <div>
           <h2 class="mb-6 text-sm font-semibold text-white-900 uppercase">
-            Legal
+            {i18n.FOOTER.PRODUCED_BY}
           </h2>
           <ul class="text-gray-500 font-medium">
             <li class="mt-2">
