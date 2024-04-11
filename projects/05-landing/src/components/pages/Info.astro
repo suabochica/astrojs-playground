@@ -1,18 +1,20 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import HeroContainer from "@/components/HeroContainer.astro"
+import HeroContainer from "@/components/HeroContainer.astro";
 
-import { getI18N } from "@/i18n"
+import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro
+const { currentLocale } = Astro;
 
-const i18n = getI18N({ currentLocale })
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
-  title=`${i18n.SEO.INFO_TITLE}``
-  description=`${i18n.SEO.INFO_DESCRIPTION_1}``
+  title=`${i18n.SEO.INFO_TITLE}`
+  `
+  description=`${i18n.SEO.INFO_DESCRIPTION_1}`
+  `
 >
   <HeroContainer img="/info-background.webp">
     <h1
@@ -21,4 +23,67 @@ const i18n = getI18N({ currentLocale })
       {i18n.INFO_TITLE}
     </h1>
   </HeroContainer>
+  <main class="pb-24">
+    <section
+      class="flex flex-col md:flex-row items-center justify-between
+      w-full max-w-[1400px]
+      mx-auto my-24 gap-10 p-6 md:p-8 sm:px-20
+      text-prety text-left text-xl"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10
+          text-balance text-left text-3xl lg:text-5xl font-semibold
+          tracking-wide"
+        >
+          {i18n.INFO_TITLE_1}
+        </h1>
+        <p>{i18n.INFO_CONTENT_1_1}</p>
+        <p>{i18n.INFO_CONTENT_1_2}</p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          src="/theater.webp"
+          alt="Theater"
+          style={{
+            aspectRatio: "812/556",
+            objectFit: "cover",
+          }}
+          height={812}
+          width={556}
+        />
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col md:flex-row items-center justify-between
+      w-full max-w-[1400px]
+      mx-auto my-24 gap-10 p-6 md:p-8 sm:px-20
+      text-prety text-left text-xl"
+    >
+      <div id="trophies" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          src="/trophies.webp"
+          alt="Trophies"
+          style={{
+            aspectRatio: "812/556",
+            objectFit: "cover",
+          }}
+          height={556}
+          width={812}
+        />
+      </div>
+      <div id="trophies-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          {i18n.INFO_TITLE_2}
+        </h1>
+        <p set:html={i18n.INFO_CONTENT_2_1} />
+        <p set:html={i18n.INFO_CONTENT_2_2} />
+      </div>
+    </section>
+  </main>
 </Layout>
