@@ -1,0 +1,45 @@
+---
+import Error404Layout from "@/layouts/Error404Layout.astro";
+import Logo from "@/components/Logo.astro";
+import styles from "@/components/styles/Button.css";
+
+import { getI18N } from "@/i18n";
+import { getLangFromUrl, useTranslatePath } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatePath(lang);
+---
+
+<Error404Layout
+  title=`${i18n.SEO.ERROR_404_TITLE}`
+  description=`${i18n.SEO.ERROR_404_DESCRIPTION}`
+>
+  <section class="flex relative pb-24 min-h-screen">
+    <div
+      class="mx-auto flex flex-col p-20 relative justify-center items-center"
+    >
+      <Logo class="w-64 h-auto mb-6" />
+      <div class="absolute">
+        <h1 class="text-4xl font-bold text-white text-center pr-2 mt-1">404</h1>
+        <p class="text-white text-[10px] md:text-xs text-center uppercase mt-2">
+          {i18n.ERROR_404.TITLE}
+        </p>
+      </div>
+      <a
+        href={translatePath("/")}
+        class={`
+        px-6
+        py-2
+        text__glowing text-sm font-medium uppercase no-underline text-white
+        w-fit
+        border border-solid border-white rounded-full
+        ${styles}
+      `}
+      >
+        {i18n.ERROR_404.BACK_HOMEPAGE_BTN}
+      </a>
+    </div>
+  </section>
+</Error404Layout>
