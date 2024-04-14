@@ -1,18 +1,23 @@
 🏝️ Landing web pages
 ====================
 
-Página creada para fines didacticos y educativos
+Página creada para fines didácticos y educativos
 
 ```sh
 npm create astro@latest -- --template basics
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-[lite-youtube](https://github.com/justinribeiro/lite-youtube), The fastest little YouTube web component on this side of the internet.
-[flowbite](https://flowbite.com), web components on to of Tailwind CSS; Used to create footer component.
+🧰 Tool Kit
+-----------
+
+La siguiente lista recopila las tecnologías utilizadas en este proyecto.
+
+- [tailwindcss](https://tailwindcss.com) La forma rápida de constuir sitios web sin nunca salir de su HTML; se utiliza a lo largo de todo el proyecto.
+- [lite-youtube](https://github.com/justinribeiro/lite-youtube), Un componente web para embeber videos de YouTube ligeramente; Se utiliza en el componente `Prefooter`
+- [flowbite](https://flowbite.com), web components on to of Tailwind CSS; Se utiliza en el componente `Footer`
+- [preact](https://preactjs.com), Alternativa rápida de 3 kB a React con la misma API moderna. Se utiliza para la página de `Archivo`. 
 
 🚀 Project Structure
 --------------------
@@ -39,10 +44,10 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-🧞 Commands
+🧞 Comandos
 -----------
 
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto.
 
 | Command                    | Action                                           |
 | :------------------------- | :----------------------------------------------- |
