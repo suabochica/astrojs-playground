@@ -5,6 +5,9 @@ import HeroContainer from "@/components/HeroContainer.astro"
 
 import { getI18N } from "@/i18n"
 
+import Button from "@/components/preact/Button"
+import Editions from "@/components/preact/Editions"
+
 const edition = "2"
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
@@ -14,11 +17,26 @@ const i18n = getI18N({ currentLocale })
   title={i18n.SEO.ARCHIVO_TITLE}
   description={i18n.SEO.ARCHIVO_DESCRIPTION}
 >
-  <HeroContainer img="/archivo-background.wbps">
-    <h1 class="lg:text-6xl text-4xl text-center uppercase mb-20 tracking-widest">{i18n.ARCHIVO.HERO_TITLE}</h1>
+  <HeroContainer img="/archivo-background.webp">
+    <h1
+      class="lg:text-6xl text-4xl text-center uppercase mb-20 font-tomaso tracking-widest"
+    >
+      {i18n.ARCHIVO.HERO_TITLE}
+    </h1>
+
+    <Button
+      className="animate-fade-up uppercase"
+      url="https://www.youtube.com/watch?v=1YmpPrqKP-g"
+    >
+      {i18n.ARCHIVO.HERO_BUTTON}
+    </Button>
   </HeroContainer>
 
   <main class="pb-24">
     <h2 class="text-4xl text-center mb-12">Preact components</h2>
+  </main>
+
+  <main class="pb-24">
+    <Editions i18n={i18n} client:load/>
   </main>
 </Layout>
