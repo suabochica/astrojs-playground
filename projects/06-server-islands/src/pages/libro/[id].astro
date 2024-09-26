@@ -1,6 +1,9 @@
 ---
 import { getCollection, render } from 'astro:content'
+import { SHOW_BUY_BUTTON } from "astro:env/server";
+
 import Layout from '../../layouts/Layout.astro'
+import BuyButton from '../../components/BuyButton.astro'
 
 export async function getStaticPaths() {
   const books = await getCollection("books")
@@ -21,11 +24,15 @@ const { Content } = await render(book)
 <Layout title={`${title} - Dev Books`}>
   <div class="flex gap-12">
     <aside class="flex flex-col items-center gap-4">
+      <a href="/" class="opacity-80 hover:underline">← Volver atraś</a>
       <img 
         transition:name={`img-${slug}`}
         src={`/${img}`} alt={title} class="rounded w-72 h-auto"
       />
-      <!-- enlace para comprar -->
+      <span id="score"></span>
+      {
+        SHOW_BUY_BUTTON && <BuyButton buy={buy} />
+      }
     </aside>
 
     <main>
@@ -36,3 +43,20 @@ const { Content } = await render(book)
     </main>
   </div>
 </Layout>
+
+<script>
+  import { SCORE_API_ENDPOINT } from "astro:env/client"
+
+  const scoreElement = document.querySelector("#score")
+
+  fetch(SCORE_API_ENDPOINT)
+    .then((res) => res.text())
+    .then((scoreValue) => {
+      if (scoreElement) {
+        scoreElement.textContent = `⭐ Puntuación: ${scoreValue.trim()}/5`
+      }
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+</script>
