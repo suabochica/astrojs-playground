@@ -21,12 +21,15 @@ const { Content } = await render(book)
 <Layout title={`${title} - Dev Books`}>
   <div class="flex gap-12">
     <aside class="flex flex-col items-center gap-4">
-      <img src={`/${img}`} alt={title} class="rounded w-72 h-auto">
+      <img 
+        transition:name={`img-${slug}`}
+        src={`/${img}`} alt={title} class="rounded w-72 h-auto"
+      />
       <!-- enlace para comprar -->
     </aside>
 
     <main>
-      <h1 class="text-4xl font-bold mb-4">{title}</h1>
+      <h1 transition:name={`title-${slug}`} class="text-4xl font-bold mb-4">{title}</h1>
       <div class="prose prose-invert">
         <Content />
       </div>
