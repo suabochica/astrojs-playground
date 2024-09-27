@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content'
 
 const books = await getCollection('books')
+
+export const prerender = true;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -22,7 +24,7 @@ const books = await getCollection('books')
 									<a href={`/libro/${slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
 										<img 
 											transition:name={`img-${slug}`}
-											src={`/${img}`} alt={title} class="w-full rounded-lg mr-5 w-48"
+											src={`/${img}`} alt={title} class="rounded-lg mr-5 w-48"
 										/>
 									</a>
 									<div class="flex flex-col justify-center">
