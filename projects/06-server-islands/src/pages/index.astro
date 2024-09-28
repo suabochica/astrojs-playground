@@ -23,8 +23,10 @@ export const prerender = true;
 								<article class="flex">
 									<a href={`/libro/${slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
 										<img 
+											class="rounded mr-5 w-48"
 											transition:name={`img-${slug}`}
-											src={`/${img}`} alt={title} class="rounded-lg mr-5 w-48"
+											src={`/${img}`}
+											alt={title} 
 										/>
 									</a>
 									<div class="flex flex-col justify-center">
@@ -34,7 +36,7 @@ export const prerender = true;
 										</h2>
 										<p class="text-gray-300 max-w-sm">{description}</p>
 										<p class="text-s mb-4">{author}</p>
-										<span class="text-xs">Lectura en {readtime} minutos</span>
+										<span class="text-xs">⏳ Lectura en {readtime} minutos</span>
 									</div>
 								</article>
 							)
