@@ -1,6 +1,6 @@
 {
   "basics": {
-    "name": "Miguel Ángel Durán",
+    "name": "Sergio Leonardo Benítez",
     "label": "Full Stack Developer con más de 15 años de experiencia & Creador de Contenido de Programación",
     "image": "https://suabochica.com/sua_profile.jpg",
     "email": "miduga@gmail.com",
@@ -34,7 +34,7 @@
   },
   "work": [
     {
-      "name": "midudev",
+      "name": "suadev",
       "position": "Divulgador sobre Programación Web",
       "url": "https://twitch.tv/midudev",
       "startDate": "2021-01-01",

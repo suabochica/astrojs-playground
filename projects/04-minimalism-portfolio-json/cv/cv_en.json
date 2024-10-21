@@ -1,6 +1,6 @@
 {
   "basics": {
-    "name": "Miguel Ángel Durán",
+    "name": "Sergio Leonardo Benítez",
     "label": "Full-Stack developer with more than 15 years of experience & development content creator",
     "image": "/me.webp",
     "email": "miduga@gmail.com",
@@ -17,24 +17,24 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
+        "username": "slbenitezd",
+        "url": "https://linkedin.com/in/slbenitezd"
       },
       {
         "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
+        "username": "suabochica",
+        "url": "https://x.com/suabochica"
       },
       {
         "network": "GitHub",
-        "username": "midudev",
-        "url": "https://github.com/midudev"
+        "username": "suabochica",
+        "url": "https://github.com/suabochica"
       }
     ]
   },
   "work": [
     {
-      "name": "midudev",
+      "name": "suadev",
       "position": "Web programming communicator",
       "url": "https://twitch.tv/midudev",
       "startDate": "2021-01-01",
