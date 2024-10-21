@@ -1,16 +1,33 @@
-# Astro Starter Kit: Minimal
+🎵 Spotify Clone
+================
+
+This project use Astro as framework to build a Spotify clone:
+
+![Spotify](./public/spotify-clone.webp "Spotify")
 
 ```sh
 npm create astro@latest -- --template minimal
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+🥡 Takeaways
+------------
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Use of view transitions.
+- Zustand to state management in React.
+- Embed a React component into Astro.
+- Embeed a Svelte component into Astro.
 
-## 🚀 Project Structure
+🧰 Tech Stack
+-------------
+
+- [Astro](https://astro.build/) as web framework.
+- [pnpm](https://pnpm.io/) as package manager.
+- [tailwindcss](https://tailwindcss.com/) as CSS framework.
+- [typescript](https://typescriptlang.org/) as JavaScript superset.
+- [zustand](https://zustand-demo.pmnd.rs/) as React state management.
+
+🚀 Project Structure
+--------------------
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -29,7 +46,8 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+🧞 Commands
+-----------
 
 All commands are run from the root of the project, from a terminal:
 

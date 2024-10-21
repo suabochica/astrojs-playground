@@ -1,13 +1,27 @@
 💼 Portafolio Web
 =================
 
+Project that use Astro to build a one page portfolio web:
+
+![Portfolio](./public/porfolio.webp "Portfolio")
+
 ```sh
 npm create astro@latest -- --template basics
 ```
 
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+🥡 Takeaways
+------------
 
+- Handle dark light theme in site web.
+- Hybrind source of truth: JSON an hardcoded.
+- CSS cool styling
+
+🧰 Tech Stack
+-------------
+
+- [Astro](https://astro.build/) as web framework.
+- [pnpm](https://pnpm.io/) as package manager.
+- [tailwindcss](https://tailwindcss.com/) as css framework
 
 🪛 Tools
 --------

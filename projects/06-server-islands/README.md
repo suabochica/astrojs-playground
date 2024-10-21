@@ -3,11 +3,7 @@
 
 Página creada para fines didácticos y educativos y favorecer el entendimiento de las islas de servidores de Astro a través de una aplicación que comparte información de libros de programación.
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![Dev Book](./public/dev-books.webp "Dev Books")
 
 🧰 Tool Kit
 -----------

@@ -3,11 +3,18 @@
 
 Página creada para fines didácticos y educativos
 
+![Landing](./public/landing.webp "Landing")
+
 ```sh
 npm create astro@latest -- --template basics
 ```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+🥡 Takeaways
+------------
+
+- Internationalization i18n.
+- Integrate external web components into Astro.
+- Create a Preact component.
 
 🧰 Tool Kit
 -----------
@@ -17,7 +24,7 @@ La siguiente lista recopila las tecnologías utilizadas en este proyecto.
 - [tailwindcss](https://tailwindcss.com) La forma rápida de constuir sitios web sin nunca salir de su HTML; se utiliza a lo largo de todo el proyecto.
 - [lite-youtube](https://github.com/justinribeiro/lite-youtube), Un componente web para embeber videos de YouTube ligeramente; Se utiliza en el componente `Prefooter`
 - [flowbite](https://flowbite.com), web components on to of Tailwind CSS; Se utiliza en el componente `Footer`
-- [preact](https://preactjs.com), Alternativa rápida de 3 kB a React con la misma API moderna. Se utiliza para la página de `Archivo`. 
+- [preact](https://preactjs.com), Alternativa rápida de 3 kB a React con la misma API moderna. Se utiliza para la página de `Archivo`.
 
 🚀 Project Structure
 --------------------

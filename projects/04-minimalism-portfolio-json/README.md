@@ -1,14 +1,22 @@
 🗒️ Minimal Portfolio
 ====================
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Project to build a minimalism portfolio with Astro:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Minimal Portfolio](./public/minimalism-porfolio.webp 'Minimal Porfolio')
 
-![JSON Resume](https://jsonresume.org)
-![Ninja Keys](https://github.com/ssleptsov/ninja-keys)
+🥡 Takeaways
+------------
+
+- Feed a portfolio with a JSON.
+- Keyboard interactions.
+- Print version.
+
+🧰 Tech Stack
+-------------
+
+- [JSON Resume](https://jsonresume.org).
+- [Ninja Keys](https://github.com/ssleptsov/ninja-keys).
 
 🚀 Project Structure
 --------------------

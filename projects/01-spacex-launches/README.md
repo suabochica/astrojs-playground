@@ -3,6 +3,8 @@
 
 This is a project starter to play with Astro.
 
+![SpaceX](./public/spacex-launches.webp "SpaceX")
+
 🧰 Tech Stack
 -------------
 
