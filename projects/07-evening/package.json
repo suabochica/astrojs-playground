@@ -1,0 +1,21 @@
+{
+  "name": "07-evening",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@fontsource-variable/jost": "^5.1.1",
+    "@midudev/tailwind-animations": "^0.1.0",
+    "astro": "^4.16.13",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
+  }
+}
