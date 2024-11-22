@@ -12,7 +12,8 @@ La siguiente lista recopila las tecnologías utilizadas en este proyecto.
 🪛 Tools
 --------
 
-- [SVGOMG](https://svgomg.net/): to optimize SVG files.
+- [SVGOMG](https://svgomg.net/), to optimize SVG files.
+- [EpochConverter](https://www.epochconverter.com), to get the timestamp of any date.
 
 ## 🚀 Project Structure
 
