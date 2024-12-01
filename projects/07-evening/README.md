@@ -8,6 +8,7 @@ La siguiente lista recopila las tecnologías utilizadas en este proyecto.
 
 - [tailwindcss](https://tailwindcss.com) La forma rápida de constuir sitios web sin nunca salir de su HTML; se utiliza a lo largo de todo el proyecto.
 - [tailwind-animation](https://github.com/midudev/tailwind-animations) Get your animations easily done with only Tailwind CSS classes.
+- [ThreeJS](https://threejs.org) to add smoke background effect.
 
 🪛 Tools
 --------
