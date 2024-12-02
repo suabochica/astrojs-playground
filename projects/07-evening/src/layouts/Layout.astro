@@ -52,13 +52,26 @@ const { title } = Astro.props;
 </script>
 
 <style is:global>
+	:root {
+		--color-primary: 12, 12, 12;
+		--color-secondary: 221, 221, 221;
+		--color-twitch: #6441A4;
+		--background-color: var(--color-primary)
+	}
+
 	html {
 		font-family: "Jost Variable", system-ui, sans-serif;
-		background: #ddd;
+		background: var(--color-primary);
 	}
+
 	#content {
 		position: relative;
 		z-index: 2;
+	}
+
+	.dark {
+		--color-primary: 221, 221, 221;
+		--color-secondary: 12, 12, 12;
 	}
 
 	.smoke-canvas {
@@ -84,4 +97,5 @@ const { title } = Astro.props;
 		bottom: 0;
 		height: 50%;
 	}
+
 </style>

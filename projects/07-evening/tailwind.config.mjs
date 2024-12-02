@@ -7,9 +7,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'primary': '#333',
-				'secondary': '#ddd',
-				'twitch': '#6441A4',
+				'primary': 'rgba(var(--color-primary))',
+				'secondary': 'rgba(var(--color-secondary))',
+				'twitch': 'var(--color-twitch)',
 			}
 		},
 	},
