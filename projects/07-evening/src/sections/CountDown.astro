@@ -62,7 +62,6 @@ const TIMESTAMP_END = 1735689000000;
     function updateCountdown() {
       const now = Date.now();
       const diff = date - now;
-      console.log(diff);
 
       if ($days instanceof HTMLElement) {
         $days.innerText = formatTime(diff / DAY);
