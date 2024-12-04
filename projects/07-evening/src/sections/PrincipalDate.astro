@@ -1,3 +1,7 @@
+---
+import Calendar from "@/components/Calendar.astro";
+---
+
 <section
   class="animate-fade-in animate-delay-500 mt-32 mx-auto flex flex-col justify-center items-center text-center text-primary"
 >
@@ -26,7 +30,7 @@
         const tz = TZ_DICTIONARY[gmt] ?? gmt;
 
         const selfScript = document.currentScript;
-        console.log(date)
+        console.log(date);
         selfScript.parentNode.innerHTML = `${date}H ${tz}`;
       </script>
     </span>
@@ -50,4 +54,6 @@
   >
     Entradas agotadas
   </a>
+
+  <Calendar />
 </section>
