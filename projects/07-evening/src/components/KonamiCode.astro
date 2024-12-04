@@ -1,0 +1,29 @@
+<script defer>
+  const container = document.getElementById("main-content");
+  const konamiCode = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+  let konamiCodePosition = 0;
+
+  document.addEventListener("keydown", ({ key }) => {
+    const requiredKey = konamiCode[konamiCodePosition];
+
+    if (key !== requiredKey) {
+      konamiCodePosition = 0;
+
+      return;
+    }
+
+    konamiCodePosition++;
+
+    container.style.transition = "none";
+    container.style.transform = "none";
+
+    if (konamiCodePosition !== konamiCode.length) {
+      return;
+    }
+
+    container.style.transform = "rotateY(360deg)";
+    container.style.transition = "transform 2s ease";
+
+    konamiCodePosition = 0;
+  });
+</script>

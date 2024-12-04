@@ -15,6 +15,7 @@ La siguiente lista recopila las tecnologías utilizadas en este proyecto.
 
 - [SVGOMG](https://svgomg.net/), to optimize SVG files.
 - [EpochConverter](https://www.epochconverter.com), to get the timestamp of any date.
+- [KonamiCode](https://www.epochconverter.com), to activate rotateY animation with ↑, ↓, ←, and →.
 
 🚀 Project Structure
 --------------------
