@@ -1,5 +1,6 @@
 ---
 import Calendar from "@/components/Calendar.astro";
+import MapMarkerIcon from "@/icons/MapMarker.astro";
 ---
 
 <section
@@ -38,22 +39,90 @@ import Calendar from "@/components/Calendar.astro";
 
   <h3 class="uppercase text-2xl font-medium flex flex-col max-w-sm mt-6">
     <span>Evento de Presentación</span>
-    <span>Teatro Victoria (Barcelona)</span>
+    <a
+      href="https://maps.app.goo.gl/RFzHUVDhRqdQaTAo8"
+      target="_blank"
+      rel="noopener"
+      style="display: -webkit-box;"
+      aria-label="ubicación del teatro en google maps, se abrirá en una nueva pestaña"
+    >
+      <MapMarkerIcon class="mr-1 max-md:mt-1 md:mt-0.5 md:size-6" />
+      Teatro Victoria (Barcelona)
+    </a>
   </h3>
 
-  <a
-    class={`
-    border-primary border-2 font-medium uppercase text-lg
-    px-4 py-1 mt-8
-    hover:bg-slate-300 hover:scale-125
-    transition inline-block
-  `}
-    href="https://www.teatrevictoria.com/es/cartelera/c/190_la-velada-del-ano-4.html"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Entradas agotadas
-  </a>
-
-  <Calendar />
+  <div class="scroll-horizontal mt-6 flex flex-col items-center gap-9 md:flex-row">
+    <a
+      href="https://www.teatrevictoria.com/es/cartelera/c/190_la-velada-del-ano-4.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="entradas agotadas, se abrirá en una nueva pestaña"
+    >
+      <span>Entradas agotadas</span>
+    </a>
+    <Calendar />
+  </div>
 </section>
+
+<style is:global>
+  .scroll-horizontal > a,
+  .scroll-horizontal > #add-to-calendar {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    width: 20rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+
+  .scroll-horizontal > a > span,
+  .scroll-horizontal > #add-to-calendar > span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+
+  .scroll-horizontal > a::before,
+  .scroll-horizontal > #add-to-calendar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: var(--color-primary);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .scroll-horizontal > a:hover,
+  .scroll-horizontal > #add-to-calendar:hover {
+    color: var(--color-secondary);
+    scale: 1.1;
+    transform: skew(-21deg);
+  }
+
+  .scroll-horizontal > a:hover::before,
+  .scroll-horizontal > #add-to-calendar:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-horizontal > a,
+    .scroll-horizontal > #add-to-calendar {
+      transition: scale 150ms ease-in-out;
+    }
+
+    .scroll-horizontal > a::before,
+    .scroll-horizontal > #add-to-calendar::before {
+      transition: all 0.5s;
+    }
+  }
+</style>
