@@ -1,0 +1,79 @@
+---
+import HeroLogo from "@/components/HeroLogo.astro";
+
+const { error, message } = Astro.props;
+---
+
+<section class="mt-8 flex flex-col place-items-center text-primary md:mt-16">
+  <HeroLogo
+    class="h-auto w-[300px] text-primary animate-duration-0 md:w-[500px]"
+    disableAnimation
+  />
+  <div class="mt-16 text-center">
+    <h1 class="text-5xl font-semibold uppercase text-white md:text-6xl">
+      Error {error}
+    </h1>
+    <h1 class="text-5xl font-semibold uppercase md:text-6xl">{message}</h1>
+  </div>
+
+  <div class="button-primary mt-10 flex flex-col item-center gap-9 text-center">
+    <a href="/" aria-label="Volver a página de inicio">
+      <span>Volver</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .button-primary > a {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-decoration: uppercase;
+    transform: skew(-21deg);
+    width: 20rem;
+  }
+
+  .button-primary > a > span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+
+  .button-primary > a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    background: var(--color-primary);
+    z-index: -1;
+  }
+
+  .button-primary > a:hover {
+    background: var(--color-secondary);
+    scale: 1.1;
+    transform: skew(-21deg);
+  }
+
+  .button-primary ? a:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .button-primary > a:hover {
+      transition: scale 150ms ease-in-out;
+    }
+
+    .button-primary > a::before {
+      transition: all 0.5s;
+    }
+  }
+</style>

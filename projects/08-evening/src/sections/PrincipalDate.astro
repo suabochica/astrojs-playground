@@ -1,0 +1,128 @@
+---
+import Calendar from "@/components/Calendar.astro";
+import MapMarkerIcon from "@/icons/MapMarker.astro";
+---
+
+<section
+  class="animate-fade-in animate-delay-500 mt-32 mx-auto flex flex-col justify-center items-center text-center text-primary"
+>
+  <h2 class="uppercase text-5xl font-semibold">
+    31 de Diciembre<span aria-hidden class="hidden md:inline mx-1">·</span><br
+      aria-hidden
+      class="block md:hidden"
+    /><span>
+      <script is:inline>
+        const END_DATE = 1735689000000;
+        const d = new Date(END_DATE);
+        const date = d.toLocaleTimeString("es", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        // get current timezone
+        const tzOffset = d.getTimezoneOffset() / 60; // pass to hours
+        const diff = tzOffset * -1;
+        const gmt = diff > 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
+
+        const TZ_DICTIONARY = {
+          "GMT+1": "CET",
+        };
+
+        const tz = TZ_DICTIONARY[gmt] ?? gmt;
+
+        const selfScript = document.currentScript;
+        console.log(date);
+        selfScript.parentNode.innerHTML = `${date}H ${tz}`;
+      </script>
+    </span>
+  </h2>
+
+  <h3 class="uppercase text-2xl font-medium flex flex-col max-w-sm mt-6">
+    <span>Evento de Presentación</span>
+    <a
+      href="https://maps.app.goo.gl/RFzHUVDhRqdQaTAo8"
+      target="_blank"
+      rel="noopener"
+      style="display: -webkit-box;"
+      aria-label="ubicación del teatro en google maps, se abrirá en una nueva pestaña"
+    >
+      <MapMarkerIcon class="mr-1 max-md:mt-1 md:mt-0.5 md:size-6" />
+      Teatro Victoria (Barcelona)
+    </a>
+  </h3>
+
+  <div class="scroll-horizontal mt-6 flex flex-col items-center gap-9 md:flex-row">
+    <a
+      href="https://www.teatrevictoria.com/es/cartelera/c/190_la-velada-del-ano-4.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="entradas agotadas, se abrirá en una nueva pestaña"
+    >
+      <span>Entradas agotadas</span>
+    </a>
+    <Calendar />
+  </div>
+</section>
+
+<style is:global>
+  .scroll-horizontal > a,
+  .scroll-horizontal > #add-to-calendar {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    width: 20rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+
+  .scroll-horizontal > a > span,
+  .scroll-horizontal > #add-to-calendar > span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+
+  .scroll-horizontal > a::before,
+  .scroll-horizontal > #add-to-calendar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: var(--color-primary);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .scroll-horizontal > a:hover,
+  .scroll-horizontal > #add-to-calendar:hover {
+    color: var(--color-secondary);
+    scale: 1.1;
+    transform: skew(-21deg);
+  }
+
+  .scroll-horizontal > a:hover::before,
+  .scroll-horizontal > #add-to-calendar:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-horizontal > a,
+    .scroll-horizontal > #add-to-calendar {
+      transition: scale 150ms ease-in-out;
+    }
+
+    .scroll-horizontal > a::before,
+    .scroll-horizontal > #add-to-calendar::before {
+      transition: all 0.5s;
+    }
+  }
+</style>

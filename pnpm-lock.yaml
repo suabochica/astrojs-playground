@@ -169,7 +169,38 @@ importers:
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.13)
 
-  projects/07-evening:
+  projects/07-pre-evening:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.4(typescript@5.6.3)
+      '@astrojs/tailwind':
+        specifier: ^5.1.2
+        version: 5.1.2(astro@4.16.14(rollup@4.22.4)(typescript@5.6.3))(tailwindcss@3.4.15)
+      '@fontsource-variable/jost':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@midudev/tailwind-animations':
+        specifier: ^0.1.0
+        version: 0.1.0(tailwindcss@3.4.15)
+      astro:
+        specifier: ^4.16.13
+        version: 4.16.14(rollup@4.22.4)(typescript@5.6.3)
+      tailwindcss:
+        specifier: ^3.4.15
+        version: 3.4.15
+      three:
+        specifier: ^0.171.0
+        version: 0.171.0
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+    devDependencies:
+      '@types/three':
+        specifier: ^0.170.0
+        version: 0.170.0
+
+  projects/08-evening:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -4877,7 +4908,7 @@ snapshots:
     dependencies:
       '@babel/helper-validator-identifier': 7.25.9
       js-tokens: 4.0.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/compat-data@7.23.5': {}
 
@@ -8547,7 +8578,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
       rehype-parse: 9.0.0
-      rehype-stringify: 10.0.0
+      rehype-stringify: 10.0.1
       unified: 11.0.5
 
   remark-gfm@4.0.0:
