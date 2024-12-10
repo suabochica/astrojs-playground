@@ -1,5 +1,5 @@
 {
-  "name": "05-landing",
+  "name": "landing",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,17 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/preact": "^3.2.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/onest": "^5.0.3",
-    "@justinribeiro/lite-youtube": "^1.5.0",
-    "astro": "^4.5.7",
-    "preact": "^10.20.2",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "@astrojs/check": "0.9.3",
+    "@astrojs/preact": "3.2.0",
+    "@astrojs/tailwind": "5.1.2",
+    "@fontsource-variable/onest": "5.0.3",
+    "@justinribeiro/lite-youtube": "1.5.0",
+    "astro": "4.16.13",
+    "preact": "10.20.2",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.4.2"
   },
   "devDependencies": {
-    "tailwindcss-animated": "^1.0.1"
+    "tailwindcss-animated": "1.0.1"
   }
 }
