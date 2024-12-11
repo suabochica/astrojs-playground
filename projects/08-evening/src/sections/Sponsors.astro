@@ -49,7 +49,7 @@ const SPONSORS = [
 ---
 
 <section class="my-40">
-  <h3 class="text-center text-2xl font-semibold uppercase text-white">Patrocinadores</h3>
+  <h3 class="text-center text-5xl font-atomic text-white">Patrocinadores</h3>
   <p class="mt-4 text-center text-xl text-neutral-300">
     La Velada puede llevarse a cabo gracias a la colaboración de los siguientes patrocinadores.
   </p>
@@ -57,7 +57,13 @@ const SPONSORS = [
   <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-3">
     {
       SPONSORS.map(({id, name, url}) => (
-        <a href={url} class="group flex h-24 items-center justify-center bg-gradient-to-b from-white/10 via-transparent to-transparent: hover:from-white/20 md:h-32" title={`Visita la página del patrocinador ${name}`} target="_blank" rel="noopener noreferrer">
+        <a 
+					href={url}
+					class="group flex h-24 items-center justify-center bg-gradient-to-b from-white/10 via-transparent to-transparent: hover:from-white/20 md:h-32"
+					title={`Visita la página del patrocinador ${name}`}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
           <img
             loading="lazy"
             src={`/images/${id}.svg`}
