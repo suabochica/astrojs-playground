@@ -4,6 +4,7 @@ import { COUNTRIES } from "@/const/countries"
 
 import Typography from "@/components/Typography.astro"
 import BoxerBigImage from "@/components/BoxerBigImage.astro"
+import ColumnBoxers from "@/components/ColumnBoxers.astro"
 
 const boxers = BOXERS.map((boxer) => {
   const { country } = boxer;
@@ -59,6 +60,35 @@ const boxerColumns = [
 				loading={selectedBoxerId ? "eager" : "lazy"}
 			/>
 		</article>
+  </div>
+
+  <div class="boxers-nav hidden w-full justify-between md:flex">
+    <nav class="boxers flex h-full justify-start gap-4 py-4">
+      <ColumnBoxers
+        boxers={boxerColumns[0]}
+        selectedBoxer={selectedBoxer}
+        imgLoading={!selectedBoxerId ? "lazy" : undefined}
+      />
+      <ColumnBoxers
+        boxers={boxerColumns[1]}
+        selectedBoxer={selectedBoxer}
+        class="mt-12"
+        imgLoading={!selectedBoxerId ? "lazy" : undefined}
+    />
+    </nav>
+    <nav class="boxers flex h-full justify-start gap-4 py-4">
+      <ColumnBoxers
+        boxers={boxerColumns[2]}
+        selectedBoxer={selectedBoxer}
+        class="mt-12"
+        imgLoading={!selectedBoxerId ? "lazy" : undefined}
+      />
+      <ColumnBoxers
+        boxers={boxerColumns[3]}
+        selectedBoxer={selectedBoxer}
+        imgLoading={!selectedBoxerId ? "lazy" : undefined}
+      />
+    </nav>
   </div>
 </section>
 
