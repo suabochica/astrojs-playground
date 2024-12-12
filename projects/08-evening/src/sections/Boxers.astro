@@ -1,0 +1,64 @@
+---
+import { BOXERS } from "@/const/boxers"
+import { COUNTRIES } from "@/const/countries"
+
+import Typography from "@/components/Typography.astro"
+import BoxerBigImage from "@/components/BoxerBigImage.astro"
+
+const boxers = BOXERS.map((boxer) => {
+  const { country } = boxer;
+  const countryName = COUNTRIES[country]?.name || "";
+
+  return {
+    ...boxer,
+    countryName,
+  }
+})
+
+const selectedBoxerId = Astro.url.searchParams.get("boxer")
+const selectedBoxer = boxers.find(({ id }) => id === selectedBoxerId) || boxers[0]
+
+// split in 4 columns
+const boxerColumns = [
+	boxers.slice(0, 6),
+	boxers.slice(6, 11),
+	boxers.slice(11, 16),
+	boxers.slice(16, 22),
+]
+---
+
+<section class="mb-20 mt-20 transform-gpu md:my-40">
+  <Typography
+    as="h3"
+    variant="atomic-title"
+    color="accent"
+    class:list={"text-center"}
+    id="selectedBoxer"
+  >
+    Elige a tu Boxeador
+  </Typography>
+
+  <Typography
+    as="p"
+    variant="body"
+    color="neutral"
+    class:list={"mt-4 text-center"}
+  >
+    Conoce los detalles de tu boxeador
+  </Typography>
+
+  <div class="mt-8 flex flex-col items-center justify-center gap-8 md:mt-32 md:flex-row lg:mt-0">
+		<article
+			class="relative flex w-full max-w-[70%] flex-col items-center justify-center md:absolute md:max-w-full lg:-mt-32"
+		>
+			<BoxerBigImage
+				id={selectedBoxer.id}
+				name={selectedBoxer.name}
+				country={selectedBoxer.country}
+				countryName={selectedBoxer.countryName}
+				loading={selectedBoxerId ? "eager" : "lazy"}
+			/>
+		</article>
+  </div>
+</section>
+
