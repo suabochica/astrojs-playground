@@ -1,0 +1,26 @@
+---
+import { BOXERS } from "@/const/boxers"
+
+import Layout from "@/layouts/Layout.astro"
+
+
+const { id } = Astro.params
+
+const [boxer] = BOXERS.filter((boxer) => boxer.id === id)
+
+
+export function getStaticPaths() {
+	return BOXERS.map(({ id }) => {
+		return { params: { id } }
+	})
+}
+---
+
+<Layout
+	description={`Información del luchador ${boxer.name}`}
+	title={`${boxer.name} - Información del boxeador de La Velada IV`}
+>
+	<main>
+		<section class="flex flex-col items-center justify-center"></section>
+    <h1>{`Boxeador ${id}`}</h1>
+  </main>

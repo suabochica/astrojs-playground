@@ -22,7 +22,8 @@ export default {
       files: "*.astro",
       options: {
         parser: "astro",
+        useTabs: false,
       },
     },
   ],
-}
+};
