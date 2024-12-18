@@ -4,7 +4,15 @@
   "description": "Welcome! Our goal is to equip you with the skills you'll need to become a professional web developer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "01": "cd projects/01-spacex-launch && pnpm dev",
+    "02": "cd projects/02-spotify-clone && pnpm dev",
+    "03": "cd projects/03-portafolio-dev && pnpm dev",
+    "04": "cd projects/04-minimalism-protafolio && pnpm dev",
+    "05": "cd projects/05-landing && pnpm dev",
+    "06": "cd projects/06-server-islands && pnpm dev",
+    "07": "cd projects/07-pre-evening && pnpm dev",
+    "08": "cd projects/08-evening && pnpm dev"
   },
   "workspaces": [
     "projects/*"
