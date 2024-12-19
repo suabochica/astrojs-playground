@@ -1,12 +1,27 @@
 ---
+import type { Boxer } from "@/types/Boxer"
+
 import { BOXERS } from "@/const/boxers"
+import { COUNTRIES } from "@/const/countries"
 
 import Layout from "@/layouts/Layout.astro"
 
+import BoxerBigImage from "@/components/BoxerBigImage.astro"
+import BoxerDetailInfo from "@/components/BoxerDetailInfo.astro"
+import BoxerDetailInfoRival from "@/components/BoxerDetailInfoRival.astro"
 
 const { id } = Astro.params
 
 const [boxer] = BOXERS.filter((boxer) => boxer.id === id)
+
+let rivals: Boxer[] = []
+if (typeof boxer.versus === "object") {
+	for (const vs of boxer.versus) {
+		rivals = rivals.concat(BOXERS.filter((rival: Boxer) => rival.id === vs))
+	}
+} else {
+	rivals = BOXERS.filter((rival: Boxer) => rival.id === boxer.versus)
+}
 
 
 export function getStaticPaths() {
@@ -21,6 +36,36 @@ export function getStaticPaths() {
 	title={`${boxer.name} - Información del boxeador de La Velada IV`}
 >
 	<main>
-		<section class="flex flex-col items-center justify-center"></section>
-    <h1>{`Boxeador ${id}`}</h1>
+		<section class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center w-full md:flex-row md:gap-10">
+        <div class="order-2 flex flex-col w-full md:order-1 md:w-1/4 md:gap-y-20">
+          <BoxerDetailInfo title="Alias" value={boxer.name} id="boxer-alias"/>
+          <BoxerDetailInfo title="País" value={COUNTRIES[boxer.country].name} id="boxer-país" />
+          <BoxerDetailInfo title="Edad" value={boxer.age} id="boxer-edad" />
+          <div class="hidden md:block">
+            <BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-desk" />
+          </div>
+        </div>
+      </div>
+
+      <div
+					class="relative order-1 -mt-20 flex flex-col items-center justify-center md:order-2 md:w-1/2 lg:mx-4"
+				>
+					<BoxerBigImage id={id} name={boxer.name} country={boxer.country} />
+				</div>
+
+				<div class="order-3 flex w-full flex-col md:w-auto md:gap-y-20 lg:w-1/4">
+					<BoxerDetailInfo title="Peso" value={`${boxer.weight} kg.`} id="boxer-peso" />
+					<BoxerDetailInfo title="Altura" value={`${boxer.height} m.`} id="boxer-altura" />
+					<BoxerDetailInfo title="Guardia" value={boxer.guard} id="boxer-guardia" />
+					<BoxerDetailInfo title="Alcance" value={boxer.reach} id="boxer-alcance" />
+
+					<div class="block md:hidden">
+						<BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-mobile" />
+					</div>
+				</div>
+			</div>
+    </section>
   </main>
+
+</Layout>
