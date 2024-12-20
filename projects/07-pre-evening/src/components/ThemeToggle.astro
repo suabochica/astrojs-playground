@@ -5,7 +5,7 @@ import MoonIcon from "@/icons/Moon.astro";
 
 <button
   id="theme-toggle"
-  class="hover:scale-125 any-hover:opacity-70 motion-safe:transition inline-flex text-primary"
+  class="hover:scale-125 hover:opacity-70 motion-safe:transition inline-flex text-primary"
 >
   <SunIcon
     class="opacity-100 motion-safe:transition-transform dark:-rotate-90 dark:opacity-0"
@@ -37,8 +37,6 @@ import MoonIcon from "@/icons/Moon.astro";
   }
 
   const handleThemePreferenceChange = (event) => {
-    console.log("event", event);
-    console.log("toggle", toggle);
     const isDark = document.documentElement.classList.contains("dark");
     const toggle = (event.matches && !isDark) || (!event.matches && isDark);
 
