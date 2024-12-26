@@ -48,6 +48,7 @@ const boxerColumns = [
 				name={selectedBoxer.name}
 				country={selectedBoxer.country}
 				countryName={selectedBoxer.countryName}
+        loading={selectedBoxerId ? "eager" : "lazy"}
 			/>
 		</article>
 

@@ -6,9 +6,18 @@ import { COUNTRIES } from "@/const/countries"
 
 import Layout from "@/layouts/Layout.astro"
 
+import Instagram from "@/icons/Instagram.astro"
+import TikTok from "@/icons/TikTok.astro"
+import Twitch from "@/icons/Twitch.astro"
+import YouTube from "@/icons/YouTube.astro"
+import X from "@/icons/X.astro"
+
 import BoxerBigImage from "@/components/BoxerBigImage.astro"
 import BoxerDetailInfo from "@/components/BoxerDetailInfo.astro"
 import BoxerDetailInfoRival from "@/components/BoxerDetailInfoRival.astro"
+import BoxerSocialLink from "@/components/BoxerSocialLink.astro"
+import BoxerWorkout from "@/components/BoxerWorkout.astro"
+import Typography from "@/components/Typography.astro"
 
 const { id } = Astro.params
 
@@ -36,36 +45,59 @@ export function getStaticPaths() {
 	title={`${boxer.name} - Información del boxeador de La Velada IV`}
 >
 	<main>
-		<section class="flex flex-col items-center justify-center">
-      <div class="flex flex-col items-center w-full md:flex-row md:gap-10">
-        <div class="order-2 flex flex-col w-full md:order-1 md:w-1/4 md:gap-y-20">
-          <BoxerDetailInfo title="Alias" value={boxer.name} id="boxer-alias"/>
-          <BoxerDetailInfo title="País" value={COUNTRIES[boxer.country].name} id="boxer-país" />
-          <BoxerDetailInfo title="Edad" value={boxer.age} id="boxer-edad" />
-          <div class="hidden md:block">
-            <BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-desk" />
-          </div>
+		<section class="flex items-center justify-center">
+
+      <div class="order-2 flex flex-col w-full md:order-1 md:w-1/4 md:gap-y-20">
+        <BoxerDetailInfo title="Alias" value={boxer.name} id="boxer-alias"/>
+        <BoxerDetailInfo title="País" value={COUNTRIES[boxer.country].name} id="boxer-país" />
+        <BoxerDetailInfo title="Edad" value={boxer.age} id="boxer-edad" />
+        <div class="hidden md:block">
+          <BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-desk" />
         </div>
       </div>
 
-      <div
-					class="relative order-1 -mt-20 flex flex-col items-center justify-center md:order-2 md:w-1/2 lg:mx-4"
-				>
+      <div class="relative order-1 -mt-20 flex items-center justify-center md:order-2 md:w-1/2 lg:mx-4">
 					<BoxerBigImage id={id} name={boxer.name} country={boxer.country} />
-				</div>
+      </div>
 
-				<div class="order-3 flex w-full flex-col md:w-auto md:gap-y-20 lg:w-1/4">
-					<BoxerDetailInfo title="Peso" value={`${boxer.weight} kg.`} id="boxer-peso" />
-					<BoxerDetailInfo title="Altura" value={`${boxer.height} m.`} id="boxer-altura" />
-					<BoxerDetailInfo title="Guardia" value={boxer.guard} id="boxer-guardia" />
-					<BoxerDetailInfo title="Alcance" value={boxer.reach} id="boxer-alcance" />
+      <div class="order-3 flex flex-col w-full  md:w-auto md:gap-y-20 lg:w-1/4">
+        <BoxerDetailInfo title="Peso" value={`${boxer.weight} kg.`} id="boxer-peso" />
+        <BoxerDetailInfo title="Altura" value={`${boxer.height} m.`} id="boxer-altura" />
+        <BoxerDetailInfo title="Guardia" value={boxer.guard} id="boxer-guardia" />
+        <BoxerDetailInfo title="Alcance" value={boxer.reach} id="boxer-alcance" />
 
-					<div class="block md:hidden">
-						<BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-mobile" />
-					</div>
-				</div>
-			</div>
+        <div class="block md:hidden">
+          <BoxerDetailInfoRival title="Rival/es" value={rivals} id="boxer-rival-mobile" />
+        </div>
+      </div>
     </section>
+
+    <section class="mt-20 md:mt-64">
+			<Typography as="h3" variant="h3" color="white" class:list={"mb-12 text-center"}>
+				REDES SOCIALES
+			</Typography>
+			<div class="mx-auto flex max-w-[600px] flex-wrap justify-center gap-2 lg:max-w-full">
+				<BoxerSocialLink href={boxer.socials.twitch}>
+					<Twitch />
+				</BoxerSocialLink>
+				<BoxerSocialLink href={boxer.socials.instagram}>
+					<Instagram />
+				</BoxerSocialLink>
+				<BoxerSocialLink href={boxer.socials.twitter}>
+					<X />
+				</BoxerSocialLink>
+				<BoxerSocialLink href={boxer.socials.youtube}>
+					<YouTube />
+				</BoxerSocialLink>
+				<BoxerSocialLink href={boxer.socials.tiktok}>
+					<TikTok />
+				</BoxerSocialLink>
+			</div>
+		</section>
+
+		{boxer.workout && <BoxerWorkout workout={boxer.workout} />}
+
+		<!-- {boxer.gallery && <BoxerGallery id={boxer.id} name={boxer.name} />} -->
   </main>
 
 </Layout>

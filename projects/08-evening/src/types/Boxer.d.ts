@@ -25,7 +25,7 @@ export interface Boxer {
     url: string;
   }>;
   workout?: {
-    videoID: string;
+    videoId: string;
     thumbnail: string;
   };
   rotate?: boolean;
