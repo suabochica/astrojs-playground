@@ -1,6 +1,8 @@
 ---
+import { ViewTransitions } from "astro:transitions"
 import "@fontsource-variable/jost";
 
+import Header from "@/components/Header.astro";
 import ButtonUp from "@/components/ButtonUp.astro";
 import SmokeBackground from "@/components/SmokeBackground.astro";
 
@@ -20,11 +22,14 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+		<ViewTransitions />
   </head>
+
   <body
     class="[&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary"
   >
     <SmokeBackground />
+    <Header/>
     <div
       id="main-content"
       class="mx-auto max-w-6xl px-2 pt-16 selection:bg-primary selection:text-secondary md:pt-20 lg:px-10"
